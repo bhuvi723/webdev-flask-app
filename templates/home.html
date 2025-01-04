@@ -11,6 +11,7 @@
       height : 200px;
       width : 100%;
       object-fit: cover;
+      margin-bottom: 16px;
     }
   </style>
 
@@ -18,14 +19,27 @@
 </head>
   
 <body>
+
+  {% include "nav.html" %}
+
+  <img class="img-fluid" id="banner" src='https://e4f51df0-8f48-49a7-bc1e-9cf7486c7874-00-g4ralca5hq6v.spock.replit.dev/static/banner.jpg'>
+  
   <div class="container">
-    <h1 class="text-center mt-2 mb-4"">{{ company_name }} Careers</h1>
     
-    <img class="img-fluid" id="banner" src='https://e4f51df0-8f48-49a7-bc1e-9cf7486c7874-00-g4ralca5hq6v.spock.replit.dev/static/banner.jpg'>
-    
-    <h2 class="text-center mt-2">About Bhuvi</h2>
-    
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pharetra magna ex, ut luctus orci convallis ut. Nulla urna augue, interdum eu semper accumsan, lacinia vitae est. Nam efficitur dignissim lacus vitae accumsan. Vestibulum vel rhoncus nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent orci lectus, lobortis ut nisi in, varius accumsan enim.</p>
+    <h1 class="text-center mt-2 mb-4">{{ company_name }} Careers</h1>
+
+    <div class="row border" style="padding-bottom:16px; margin-bottom:16px; padding-top:16px; margin-top:16px;"> 
+      <div class="col-md-6">
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pharetra magna ex, ut luctus orci convallis ut. Nulla urna augue, interdum eu semper accumsan, lacinia vitae est. Nam efficitur dignissim lacus vitae accumsan. Vestibulum vel rhoncus nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent orci lectus, lobortis ut nisi in, varius accumsan enim.</p> 
+      </div>
+
+      <div class="d-none d-md-block col-md-1"></div> 
+      
+      <div class="d-none d-md-block col-md-5"> 
+        <img src="/static/people.jpg" style="height:250px; border-radius:10px;">
+      </div>
+    </div>
+  
 
     <div>
       <h2 class="text-center">Job Openings</h2>
@@ -39,11 +53,13 @@
       </div>
 
       <div class="text-center">
-        <button class="btn btn-secondary btn-lg mt-2">Contact Us</button>
+        <a target="_blank" href="mailto:salvajibhuvi@gmail.com?subject=Question%20regarding%20the%20job%20applications&body=Name%20%3A%20%3Cyour%20name%3E%0D%0A%0D%0AQuestion%20%3A%20%3Cyour%20question%3E"class="btn btn-secondary btn-lg mt-2">Ask Us</a>
       </div>
       
-      <p class="text-center mt-4 mb-3">Copyright 2025, Bhuvi</p>
     </div>
   </div>
+
+  {% include "footer.html" %}
+  
 </body>
 </html>
