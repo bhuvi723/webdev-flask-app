@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "bootstrap.html" %}
+    <title>{{ job.title }} - Bhuvi Careers</title>
+  </head>
+  
+  <body>
+    {% include "nav.html" %}
+      {% include "banner.html" %}
+
+    <div class="container">
+
+      <h1 class="text-center mt-2 mb-4 ">Job Description</h1>
+
+      <div class="border-bottom mt-2 mb-3"></div>
+
+      <h4> {{ job.title }}</h4>
+      <p style="font-size: 16px;">{{ job.location }}</p><br>
+
+      <h5>Responsibillities</h5>
+
+      <ul>
+          {% for job in job.responsibilities.strip("\"").split("\n") %}
+              <li>
+                <p class="fs-6 text">{{ job }}</p>
+              </li>
+            {% endfor %}
+      </ul>
+
+      <h5 class="mt-2">Requirements</h5>
+      <ul>
+          {% for job in job.requirements.strip("\"").split("\n") %}
+            <li>
+              <p class="fs-6 text">{{ job }}</p>
+            </li>
+          {% endfor %}
+      </ul>
+
+      <h5 class="mt-2">Salary</h5>
+      <p>{{ job.currency }}{{ job.salary }}</p><br>
+
+    </div>
+
+      {% include "footer.html" %}
+  </body>
+</html>

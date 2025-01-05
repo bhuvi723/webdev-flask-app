@@ -13,10 +13,10 @@ ssl_ca_path = os.getenv("ssl_ca_path")
 
 conn_str = (
     f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
-    f"?ssl_ca={ssl_ca_path}&ssl_verify_cert=false"
-)
+    f"?ssl_ca={ssl_ca_path}&ssl_verify_cert=false")
 
 engine = create_engine(conn_str)
+
 
 def load_jobs_from_db():
   with engine.connect() as conn:
@@ -28,3 +28,13 @@ def load_jobs_from_db():
       jobs_dict_list.append(job._asdict())
 
     return jobs_dict_list
+
+def load_job_from_db(id):
+  with engine.connect() as conn:
+    result = conn.execute(text(f"select * from jobs where id = {id}"))    
+
+    rows = result.all()
+    if len(rows) == 1:
+      return rows[0]._asdict()
+    else:
+      return None

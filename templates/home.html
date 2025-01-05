@@ -1,32 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% include "bootstrap.html" %}
   <title>Bhuvi Careers</title>
-
-  <style>
-    #banner{
-      height : 200px;
-      width : 100%;
-      object-fit: cover;
-      margin-bottom: 16px;
-    }
-  </style>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
   
 <body>
 
   {% include "nav.html" %}
 
-  <img class="img-fluid" id="banner" src='https://e4f51df0-8f48-49a7-bc1e-9cf7486c7874-00-g4ralca5hq6v.spock.replit.dev/static/banner.jpg'>
+  {% include "banner.html" %}
   
   <div class="container">
     
-    <h1 class="text-center mt-2 mb-4">{{ company_name }} Careers</h1>
+    <h1 class="text-center mt-2 mb-4">Bhuvi Careers</h1>
 
     <div class="row border" style="padding-bottom:16px; margin-bottom:16px; padding-top:16px; margin-top:16px;"> 
       <div class="col-md-6">
